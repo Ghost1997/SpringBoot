@@ -56,8 +56,6 @@ public class bfoService {
 			
 			Optional<BFO> bfo = repository.findById(id);
 			String dbDate = sdf.format(bfo.get().getCreatedDate());
-			System.out.println(bfo.isPresent()+ " "+dbDate.equals(reqDate));
-			System.out.println(dbDate+" "+reqDate);
 			if (bfo.isPresent() && dbDate.equals(reqDate)) {
 				ArrayList al = new ArrayList();
 				al.add(bfo);
