@@ -23,7 +23,7 @@ public class bfoService {
 	private bfoRepository repository;
 
 	public Response create(BFO bfo) {
-		if (Pattern.compile("^0006ABCDX").matcher(bfo.getOpportunityId()).find()) {
+		if (Pattern.compile("[0-9]{4}[A-Z]{5}[0-9]{2}").matcher(bfo.getOpportunityId()).find()) {
 			bfo.getOpportunityId();
 			repository.save(bfo);
 			ArrayList al = new ArrayList();
